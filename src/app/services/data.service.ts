@@ -10,8 +10,8 @@ constructor(
   private http: HttpClient
 ) { }
 
-  getPokemons(){
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=10`)
+  getPokemons(limit: number, offset: number){
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
   }
 
   getMoreData(name: string){
