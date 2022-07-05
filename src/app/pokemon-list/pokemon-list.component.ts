@@ -1,4 +1,4 @@
-import { DataService } from './../services/data.service';
+import { DataService } from '../@core/api/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,13 +6,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss']
 })
+
 export class PokemonListComponent implements OnInit {
   pokemons: any[] = []
   page: number = 1;
   totalPokemons: number = 0;
 
   constructor(
-    private dataService: DataService
+    private dataService: DataService,
   ) { }
 
   ngOnInit() {
@@ -32,4 +33,5 @@ export class PokemonListComponent implements OnInit {
         });
     })
   }
+
 }

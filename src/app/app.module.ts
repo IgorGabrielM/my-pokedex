@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NbThemeModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [			
@@ -18,6 +19,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+    NbThemeModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
