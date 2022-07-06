@@ -21,14 +21,14 @@ export class PokemonListComponent implements OnInit {
   }
 
   loadAllPokemons(){
-    this.dataService.getPokemons(20, this.page + 0)
+    this.dataService.getPokemons(15, this.page + 1)
       .subscribe((response: any) => {
         this.totalPokemons = response.count;
         response.results.forEach((result: any) => {
           this.dataService.getMoreData(result.name)
-            .subscribe((uniqresponse: any) => {
-              this.pokemons.push(uniqresponse);
-              console.log(this.pokemons)
+            .subscribe((uniqResponse: any) => {
+              this.pokemons.push(uniqResponse);
+              console.log(this.pokemons[0])
             });
         });
     })
