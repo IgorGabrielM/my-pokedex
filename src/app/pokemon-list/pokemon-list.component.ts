@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class PokemonListComponent implements OnInit {
   pokemons: any[] = []
-  page: number = 1;
+  page: number = 0;
   totalPokemons: number = 0;
 
   constructor(
@@ -21,7 +21,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   loadAllPokemons(){
-    this.dataService.getPokemons(15, this.page + 1)
+    this.dataService.getPokemons(15, this.page + 0)
       .subscribe((response: any) => {
         this.totalPokemons = response.count;
         response.results.forEach((result: any) => {
