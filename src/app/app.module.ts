@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { NbThemeModule } from '@nebular/theme';
+import {NbCardModule, NbThemeModule} from '@nebular/theme';
+import {ActionDialogComponent} from "./pokemon-list/action-dialog/action-dialog.component";
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent,
     HeaderComponent,
-      PokemonListComponent
+    PokemonListComponent,
+    ActionDialogComponent,
    ],
   imports: [
     BrowserModule,
@@ -20,6 +22,7 @@ import { NbThemeModule } from '@nebular/theme';
     HttpClientModule,
     NgxPaginationModule,
     NbThemeModule.forRoot(),
+    NbCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

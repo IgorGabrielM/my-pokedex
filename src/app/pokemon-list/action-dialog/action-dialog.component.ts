@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Optional} from '@angular/core';
+import {NbDialogRef} from "@nebular/theme";
 
 @Component({
   selector: 'app-action-dialog',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Optional() private dialogRef: NbDialogRef<string>,
+  ) { }
 
   ngOnInit() {
   }
+
+  modalClose(refresh?: boolean) {
+    this.dialogRef.close(refresh);
+  }
+
 
 }
