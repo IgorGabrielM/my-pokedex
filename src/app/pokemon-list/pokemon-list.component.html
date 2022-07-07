@@ -31,7 +31,7 @@
   </div>
 
   <div *ngIf="isSearching" class="pokemon__list">
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4" (click)="dialogService.showDialog = true">
       <div>
         <div class="card__info">
           <h2 class="color-white">{{searchPokemon.name}}</h2>
