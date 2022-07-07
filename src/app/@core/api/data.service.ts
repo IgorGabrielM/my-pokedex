@@ -14,7 +14,7 @@ constructor(
     return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
   }
 
-  getMoreData(name: string){
+  getPokemonByName(name: string){
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
   }
 

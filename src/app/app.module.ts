@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import {NbCardModule, NbThemeModule} from '@nebular/theme';
+import {NbCardModule, NbDialogModule, NbLayoutModule, NbThemeModule} from '@nebular/theme';
 import {ActionDialogComponent} from "./pokemon-list/action-dialog/action-dialog.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,8 +22,11 @@ import {ActionDialogComponent} from "./pokemon-list/action-dialog/action-dialog.
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+    NbDialogModule.forChild(),
     NbThemeModule.forRoot(),
     NbCardModule,
+    NbLayoutModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

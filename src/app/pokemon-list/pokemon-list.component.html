@@ -1,6 +1,9 @@
 <div class="bg-gray-200">
-  <div class="
-  sm:inline-grid sm:grid-cols-2 sm:gap-3
+  <input type="checkbox" [checked]="classicMode" (change)="classicMode = !classicMode">
+  {{classicMode ? 'Classic' : 'Gif'}}>
+  <input [formControl]="search" (keydown.enter)="onSearchPokemon()" placeholder="Pikachu">
+  <div *ngIf="!isSearching"
+  class="sm:inline-grid sm:grid-cols-2 sm:gap-3
   md:inline-grid md:grid-cols-3 md:gap-2
   lg:inline-grid lg:grid-cols-4 lg:gap-3
   xl:inline-grid xl:grid-cols-5 xl:gap-3
@@ -13,8 +16,8 @@
       (click)="managementAction()">
         <h1 class="text-gray-900 text-center">{{ pokemon.name }}</h1>
         <div class="flex">
-          <img [src]="pokemon.sprites.front_default"
-            alt="Pokemon" class="flex ml-10" >
+          <img *ngIf="classicMode" [src]="pokemon.sprites?.front_default" [alt]="pokemon.name">
+          <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif" [alt]="searchPokemon.name">
         </div>
     </div>
   </div>
@@ -23,5 +26,20 @@
     <pagination-controls
       (pageChange)="page = $event; pokemons = []; loadAllPokemons()">
     </pagination-controls>
+  </div>
+
+  <div *ngIf="isSearching" class="pokemon__list">
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+      <div>
+        <div class="card__info">
+          <h2 class="color-white">{{searchPokemon.name}}</h2>
+          <span class="color-white" *ngFor="let type of searchPokemon.types">{{type.type.name}}</span>
+        </div>
+        <div class="card__img">
+          <img *ngIf="classicMode" [src]="searchPokemon.sprites?.front_default" [alt]="searchPokemon.name">
+          <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{searchPokemon.name}}.gif" [alt]="searchPokemon.name">
+        </div>
+      </div>
+    </div>
   </div>
 </div>
