@@ -1,6 +1,8 @@
+<app-action-dialog *ngIf="dialogService.showDialog"></app-action-dialog>
+
 <div class="bg-gray-200">
   <input type="checkbox" [checked]="classicMode" (change)="classicMode = !classicMode">
-  {{classicMode ? 'Classic' : 'Gif'}}>
+  {{classicMode ? 'Classic' : 'Gif'}}
   <input [formControl]="search" (keydown.enter)="onSearchPokemon()" placeholder="Pikachu">
   <div *ngIf="!isSearching"
   class="sm:inline-grid sm:grid-cols-2 sm:gap-3
@@ -12,8 +14,8 @@
     <div
       class="rounded-lg shadow-xl p-10 justify-center bg-gray-100"
       *ngFor="let pokemon of pokemons |
-      paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPokemons }"
-      (click)="managementAction()">
+      paginate: { itemsPerPage: 15, currentPage: page, totalItems: totalPokemons }"
+      (click)="dialogService.showDialog = true">
         <h1 class="text-gray-900 text-center">{{ pokemon.name }}</h1>
         <div class="flex">
           <img *ngIf="classicMode" [src]="pokemon.sprites?.front_default" [alt]="pokemon.name">

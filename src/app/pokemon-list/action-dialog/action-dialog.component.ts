@@ -1,5 +1,7 @@
-import {Component, OnInit, Optional} from '@angular/core';
+import {Component, Input, OnInit, Optional} from '@angular/core';
 import {NbDialogRef} from "@nebular/theme";
+import {PokemonDetailModel} from "../../@core/model/pokemon.detail";
+import {DialogService} from "../../@core/api/dialog.service";
 
 @Component({
   selector: 'app-action-dialog',
@@ -9,15 +11,10 @@ import {NbDialogRef} from "@nebular/theme";
 export class ActionDialogComponent implements OnInit {
 
   constructor(
-    @Optional() private dialogRef: NbDialogRef<string>,
+    public dialogService: DialogService,
   ) { }
 
   ngOnInit() {
   }
-
-  modalClose(refresh?: boolean) {
-    this.dialogRef.close(refresh);
-  }
-
 
 }

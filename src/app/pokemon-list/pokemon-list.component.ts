@@ -5,6 +5,7 @@ import {NbDialogRef, NbDialogService} from "@nebular/theme";
 import {takeWhile} from "rxjs";
 import {PokemonDetailModel} from "../@core/model/pokemon.detail";
 import {FormControl} from "@angular/forms";
+import {DialogService} from "../@core/api/dialog.service";
 
 @Component({
   selector: 'app-pokemon-list',
@@ -24,8 +25,8 @@ export class PokemonListComponent implements OnInit {
   classicMode: boolean = true;
 
   constructor(
-    private dialogService: NbDialogService,
     private dataService: DataService,
+    public dialogService: DialogService,
   ) { }
 
   ngOnInit() {
@@ -62,10 +63,4 @@ export class PokemonListComponent implements OnInit {
     }
   }
 
-  managementAction() {
-    this.dialogService.open(ActionDialogComponent)
-      .onClose.pipe(
-      takeWhile(() => this.alive)
-    )
-  }
 }
