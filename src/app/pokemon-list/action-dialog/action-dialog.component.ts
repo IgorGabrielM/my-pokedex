@@ -9,6 +9,8 @@ import {DialogService} from "../../@core/api/dialog.service";
   styleUrls: ['./action-dialog.component.scss']
 })
 export class ActionDialogComponent implements OnInit {
+  @Input() selectPokemon: PokemonDetailModel;
+  classicMode: boolean = true;
 
   constructor(
   ) { }

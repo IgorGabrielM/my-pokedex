@@ -1,6 +1,6 @@
 <div class="bg-gray-200 grid-rows-1 xl:inline-grid xl:grid-cols-3 mx-3">
   <div class="xl:inline-grid xl:grid-cols-1 xl:gp-3 mx-3">
-    <app-action-dialog></app-action-dialog>
+    <app-action-dialog [selectPokemon]="selectPokemon"></app-action-dialog>
   </div>
   <div class="col-span-2">
   <input type="checkbox" [checked]="classicMode" (change)="classicMode = !classicMode">
@@ -8,8 +8,7 @@
   <input [formControl]="search" (keydown.enter)="onSearchPokemon()" placeholder="Pikachu">
   <div *ngIf="!isSearching" class="xl:inline-grid xl:grid-cols-4 col-span-2 col-end-3 xl:gap-3 mx-3">
     <div class="rounded-lg shadow-xl p-10 justify-center bg-gray-100"
-      *ngFor="let pokemon of pokemons |
-      paginate: { itemsPerPage: 15, currentPage: page, totalItems: totalPokemons }">
+      *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalPokemons}" (click)="getSelectPokemon(pokemon)">
         <h1 class="text-gray-900 text-center">{{ pokemon.name }}</h1>
         <div class="flex">
           <img *ngIf="classicMode" [src]="pokemon.sprites?.front_default" [alt]="pokemon.name">

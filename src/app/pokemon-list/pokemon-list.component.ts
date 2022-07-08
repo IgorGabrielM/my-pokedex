@@ -22,6 +22,7 @@ export class PokemonListComponent implements OnInit {
   isLoading: boolean;
   searchPokemon: PokemonDetailModel = new PokemonDetailModel();
   classicMode: boolean = true;
+  selectPokemon: PokemonDetailModel
 
   constructor(
     private dataService: DataService,
@@ -59,6 +60,11 @@ export class PokemonListComponent implements OnInit {
           this.isLoading = false;
         })
     }
+  }
+
+  getSelectPokemon(pokemon: PokemonDetailModel){
+    this.selectPokemon = pokemon
+    console.log(this.selectPokemon)
   }
 
 }
