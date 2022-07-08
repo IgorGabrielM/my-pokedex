@@ -8,6 +8,7 @@ export class PokemonDetailModel {
   types: Type[];
   weight: number;
   sprites: Sprite;
+  base_experience: number;
   stats: Stat[];
 
   constructor() {

@@ -11,9 +11,10 @@
         </div>
       </header>
 
-      <main class="content">
+      <section class="subtitle">
         <div class="title">
-          <h1 class="text-gray-900">{{ selectPokemon.name }}</h1>
+          <h2 class="text-gray-900">{{ selectPokemon.name }}</h2>
+        </div>
           <div class="types">
             <div *ngIf="selectPokemon.types.length === 1">
               <h2>{{ selectPokemon.types[0].type.name}}</h2>
@@ -23,11 +24,22 @@
               <h2 >{{ selectPokemon.types[1].type.name }}</h2>
             </div>
           </div>
-        </div>
-      </main>
+      </section>
 
-      <footer>
-        <div>Moves, Sobre, Ataks</div>
+      <section class="content stats">
+        <div>
+          <p>Weight: {{ selectPokemon.weight }}</p>
+          <p>Height: {{ selectPokemon.height }} </p>
+          <p>Base experience: {{ selectPokemon.base_experience }} </p>
+        </div>
+      </section>
+
+      <footer class="footer flex align-bottom">
+        <div class="flex align-bottom">
+          <button>Status</button>
+          <button>Attacks</button>
+          <button>Evolutions</button>
+        </div>
       </footer>
 
     </div>
