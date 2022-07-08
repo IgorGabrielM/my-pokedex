@@ -1,1 +1,65 @@
+.modal{
+  margin-top: 50px;
+  height: 700px;
+}
 
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.selectGif{
+  margin-left: 90%;
+}
+
+
+.grass{
+  background-color: green;
+}
+.bug{
+  background-color: lightgreen;
+}
+
+.water{
+  background-color: blue;
+}
+.ice{
+  background-color: lightblue;
+}
+.ground{
+  background-color: sandybrown;
+}
+.rock{
+  background-color: saddlebrown;
+}
+.fire{
+  background-color: red;
+}
+.fighting{
+  background-color: #ff1472;
+}
+.fairy{
+  background-color: lightpink;
+}
+.psychic {
+  background-color: #ff3ba3;
+}
+.dragon{
+  background-color: mediumpurple;
+}
+.poison{
+  background-color: purple;
+}
+.ghost{
+  background-color: mediumpurple;
+}
+.electric{
+  background-color: yellow;
+}
+.title{
+  text-align: center;
+}
+.normal{
+  background-color: lightgray;
+}

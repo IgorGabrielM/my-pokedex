@@ -1,11 +1,29 @@
-  <div class="container flex bg-gray-100 rounded-lg shadow-xl p-10">
-    <div class="modal">
-      <h1 class="text-gray-900 text-center">{{ selectPokemon.name }}</h1>
-      <div class="image">
-        <img *ngIf="classicMode" [src]="selectPokemon.sprites?.front_default" [alt]="selectPokemon.name">
-        <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{selectPokemon.name}}.gif" [alt]="selectPokemon.name">
-      </div>
-      <input type="checkbox" [checked]="classicMode" (change)="classicMode = !classicMode">
-      {{classicMode ? 'Classic' : 'Gif'}}
+  <div class="container">
+    <div class="modal bg-gray-100 rounded-lg shadow-xl p-10">
+      <header [class]="selectPokemon.types[0].type.name">
+        <div class="image">
+          <img *ngIf="classicMode" [src]="selectPokemon.sprites?.front_default" [alt]="selectPokemon.name">
+          <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{selectPokemon.name}}.gif" [alt]="selectPokemon.name">
+        </div>
+        <div class="selectGif">
+          <input type="checkbox" [checked]="classicMode" (change)="classicMode = !classicMode">
+          {{classicMode ? 'Classic' : 'Gif'}}
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="title">
+          <h1 class="text-gray-900">{{ selectPokemon.name }}</h1>
+          <div class="types">
+            <h2>{{ selectPokemon.types[0].type.name}}</h2>
+<!--            <h2>{{ selectPokemon.types[1].type.name }}</h2>-->
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div>Moves, Sobre, Ataks</div>
+      </footer>
+
     </div>
   </div>
