@@ -1,6 +1,6 @@
 <div class="bg-gray-200 grid-rows-1 xl:inline-grid xl:grid-cols-3 mx-3">
   <div class="xl:inline-grid xl:grid-cols-1 xl:gp-3 mx-3">
-    <app-action-dialog [selectPokemon]="selectPokemon"></app-action-dialog>
+    <app-action-dialog *ngIf="selectPokemon" [selectPokemon]="selectPokemon"></app-action-dialog>
   </div>
   <div class="col-span-2">
   <input type="checkbox" [checked]="classicMode" (change)="classicMode = !classicMode">

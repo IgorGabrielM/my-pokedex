@@ -67,7 +67,6 @@ export class PokemonListComponent implements OnInit {
       this.dataService.getPokemonByName(name)
         .subscribe((pokemon: any) => {
           this.searchPokemon = pokemon;
-          console.log(this.searchPokemon)
           this.isLoading = false;
         })
     }
