@@ -4,58 +4,73 @@
 }
 
 .image {
+  min-width: 150px;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
 }
 
 .selectGif{
   margin-left: 90%;
 }
 
-
 .grass{
-  background-color: #b4e656;
+  background-color: #89ff7c;
+  border-radius: 5px;
 }
 .bug{
   background-color: #c7d76e;
+  border-radius: 5px;
 }
 .water{
   background-color: #88DFF2;
+  border-radius: 5px;
 }
 .ice{
   background-color: #C2E5F2;
+  border-radius: 5px;
 }
 .ground{
   background-color: #c68860;
+  border-radius: 5px;
 }
 .rock{
   background-color: #8b604b;
+  border-radius: 5px;
 }
 .fire{
   background-color: #ff7240;
+  border-radius: 5px;
 }
 .fighting{
   background-color: #ff286b;
+  border-radius: 5px;
 }
 .fairy{
   background-color: #ffa5b4;
+  border-radius: 5px;
 }
 .psychic {
   background-color: #ff76b9;
+  border-radius: 5px;
 }
 .dragon{
   background-color: mediumpurple;
+  border-radius: 5px;
 }
 .poison{
   background-color: #8c579f;
+  border-radius: 5px;
 }
 .ghost{
   background-color: #4e2ba3;
+  border-radius: 5px;
 }
 .electric{
   background-color: #FFFB00;
+  border-radius: 5px;
 }
+
 .title{
   text-align: center;
 }

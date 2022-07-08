@@ -15,8 +15,13 @@
         <div class="title">
           <h1 class="text-gray-900">{{ selectPokemon.name }}</h1>
           <div class="types">
-            <h2>{{ selectPokemon.types[0].type.name}}</h2>
-<!--            <h2>{{ selectPokemon.types[1].type.name }}</h2>-->
+            <div *ngIf="selectPokemon.types.length === 1">
+              <h2>{{ selectPokemon.types[0].type.name}}</h2>
+            </div>
+            <div *ngIf="selectPokemon.types.length === 2">
+              <h2>{{ selectPokemon.types[0].type.name}}</h2>
+              <h2 >{{ selectPokemon.types[1].type.name }}</h2>
+            </div>
           </div>
         </div>
       </main>

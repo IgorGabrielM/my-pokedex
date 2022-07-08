@@ -41,7 +41,6 @@ export class PokemonListComponent implements OnInit {
           this.dataService.getPokemonByName(result.name)
             .subscribe((uniqResponse: any) => {
               this.pokemons.push(uniqResponse);
-              console.log(this.pokemons)
             });
         });
     })
