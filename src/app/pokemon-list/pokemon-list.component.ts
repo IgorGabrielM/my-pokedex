@@ -17,7 +17,6 @@ export class PokemonListComponent implements OnInit {
   pokemons: PokemonDetailModel[] = []
   page: number = 0;
   totalPokemons: number = 0;
-  alive: boolean = true;
   search: FormControl = new FormControl('');
   isSearching = false;
   isLoading: boolean;
@@ -26,7 +25,6 @@ export class PokemonListComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    public dialogService: DialogService,
   ) { }
 
   ngOnInit() {
@@ -34,7 +32,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   loadAllPokemons(){
-    this.dataService.getPokemons(15, this.page + 0)
+    this.dataService.getPokemons(12, this.page + 0)
       .subscribe((response: any) => {
         this.totalPokemons = response.count;
         response.results.forEach((result: any) => {

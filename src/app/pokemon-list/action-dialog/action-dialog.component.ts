@@ -11,7 +11,6 @@ import {DialogService} from "../../@core/api/dialog.service";
 export class ActionDialogComponent implements OnInit {
 
   constructor(
-    public dialogService: DialogService,
   ) { }
 
   ngOnInit() {
