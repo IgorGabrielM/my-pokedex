@@ -91,3 +91,17 @@
 .normal{
   background-color: lightgray;
 }
+
+@media (max-width: 1280px){
+  .modal{
+    margin-top: 50px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 600px){
+  .modal{
+    margin-top: 50px;
+    height: 400px;
+  }
+}
