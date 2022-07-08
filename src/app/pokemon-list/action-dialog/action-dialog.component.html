@@ -1,8 +1,11 @@
-  <div class="container">
-    <input type="checkbox" [checked]="classicMode" (change)="classicMode = !classicMode">
-    {{classicMode ? 'Classic' : 'Gif'}}
-    <div class="modal"><h1 class="text-gray-900 text-center">{{ selectPokemon.name }}</h1>
-      <img *ngIf="classicMode" [src]="selectPokemon.sprites?.front_default" [alt]="selectPokemon.name">
-      <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{selectPokemon.name}}.gif" [alt]="selectPokemon.name">
+  <div class="container flex bg-gray-100 rounded-lg shadow-xl p-10">
+    <div class="modal">
+      <h1 class="text-gray-900 text-center">{{ selectPokemon.name }}</h1>
+      <div class="image">
+        <img *ngIf="classicMode" [src]="selectPokemon.sprites?.front_default" [alt]="selectPokemon.name">
+        <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{selectPokemon.name}}.gif" [alt]="selectPokemon.name">
+      </div>
+      <input type="checkbox" [checked]="classicMode" (change)="classicMode = !classicMode">
+      {{classicMode ? 'Classic' : 'Gif'}}
     </div>
   </div>

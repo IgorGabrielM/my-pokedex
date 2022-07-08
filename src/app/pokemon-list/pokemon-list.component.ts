@@ -23,6 +23,7 @@ export class PokemonListComponent implements OnInit {
   searchPokemon: PokemonDetailModel = new PokemonDetailModel();
   classicMode: boolean = true;
   selectPokemon: PokemonDetailModel
+  count = 0
 
   constructor(
     private dataService: DataService,
@@ -32,18 +33,28 @@ export class PokemonListComponent implements OnInit {
     this.loadAllPokemons();
   }
 
-  loadAllPokemons(){
-    this.dataService.getPokemons(12, this.page + 0)
+  loadAllPokemons(paginationMax: number = 0){
+    this.dataService.getPokemons(12, this.page + paginationMax)
       .subscribe((response: any) => {
         this.totalPokemons = response.count;
         response.results.forEach((result: any) => {
           this.dataService.getPokemonByName(result.name)
             .subscribe((uniqResponse: any) => {
               this.pokemons.push(uniqResponse);
-              console.log(this.pokemons[0])
+              console.log(this.pokemons)
             });
         });
     })
+  }
+
+  loadNextPage(){
+    this.count += 12
+    this.loadAllPokemons(this.count)
+  }
+
+  loadPreviusPage(){
+    this.count -= 12
+    this.loadAllPokemons(this.count)
   }
 
   onSearchPokemon(): void {

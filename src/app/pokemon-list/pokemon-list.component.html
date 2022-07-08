@@ -18,9 +18,8 @@
   </div>
   <br>
   <div>
-    <pagination-controls
-      (pageChange)="page = $event; pokemons = []; loadAllPokemons()">
-    </pagination-controls>
+    <button (click)="loadPreviusPage(); pokemons = []">Anterior</button>
+    <button (click)="loadNextPage(); pokemons = []">Proximo</button>
   </div>
 
   <div *ngIf="isSearching" class="pokemon__list">
