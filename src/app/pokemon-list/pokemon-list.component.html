@@ -27,19 +27,18 @@
           <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif" [alt]="searchPokemon.name">
         </div>
     </div>
+      <div>
+        <button (click)="loadPreviusPage(); pokemons = []">Anterior</button>
+        <button (click)="loadNextPage(); pokemons = []">Proximo</button>
+      </div>
   </div>
   <br>
-  <div>
-    <button (click)="loadPreviusPage(); pokemons = []">Anterior</button>
-    <button (click)="loadNextPage(); pokemons = []">Proximo</button>
-  </div>
 
   <div *ngIf="isSearching" class="pokemon__list">
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+    <div (click)="getSelectPokemon(searchPokemon)" class="rounded-lg shadow-xl p-10 justify-center bg-gray-100">
       <div>
         <div class="card__info">
           <h2 class="color-white">{{searchPokemon.name}}</h2>
-          <span class="color-white" *ngFor="let type of searchPokemon.types">{{type.type.name}}</span>
         </div>
         <div class="card__img">
           <img *ngIf="classicMode" [src]="searchPokemon.sprites?.front_default" [alt]="searchPokemon.name">
