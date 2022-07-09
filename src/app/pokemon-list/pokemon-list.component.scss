@@ -1,3 +1,19 @@
-pagination-controls{
+.inputs{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.imageGif{
+  margin-left: 50px;
+  margin-top: 10px;
+  max-width: 50px;
+}
+
+.searchPokemon{
+  margin-top: 2%;
+  margin-left: 25%;
+  height: 30px;
+  width: 400px;
+  border-radius: 10px;
   text-align: center;
 }
