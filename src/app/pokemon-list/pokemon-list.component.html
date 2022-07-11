@@ -1,11 +1,11 @@
 <div class="bg-gray-200 grid-rows-1 xl:inline-grid xl:grid-cols-3 mx-3">
   <div class="
-  xl:inline-grid xl:grid-cols-2 xl:gp-3 mx-3
+  xl:inline-grid xl:grid-cols-1 xl:gp-3 mx-3
   lg:inline-grid xl:grid-cols-1 xl:gp-3 mx-3
-  md:inline-grid xl:grid-cols-1 md:gp-3 mx-3
-  sm:inline-grid xl:grid-cols-2 sm:gp-3 mx-3
+  md:inline-grid md:grid-cols-1 md:gp-3 mx-3
+  sm:inline-grid sm:grid-cols-4 sm:gp-3 mx-3
 ">
-    <app-action-dialog *ngIf="selectPokemon" [selectPokemon]="selectPokemon"></app-action-dialog>
+    <app-action-dialog *ngIf="selectPokemon" [selectPokemon]="selectPokemon" class="sm:inline-grid sm:grid-cols-4 sm:gp-3 mx-3"></app-action-dialog>
   </div>
 
   <div class="col-span-2">
