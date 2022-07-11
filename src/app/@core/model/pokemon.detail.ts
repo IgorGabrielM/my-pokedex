@@ -40,6 +40,7 @@ class Type {
 
 class Sprite {
   front_default: string;
+  front_shiny: string;
 }
 
 class Stat {

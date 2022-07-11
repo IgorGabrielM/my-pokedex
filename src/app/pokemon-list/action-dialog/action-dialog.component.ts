@@ -11,6 +11,7 @@ import {DialogService} from "../../@core/api/dialog.service";
 export class ActionDialogComponent implements OnInit {
   @Input() selectPokemon: PokemonDetailModel;
   classicMode: boolean = true;
+  isShiny: boolean = false
 
   constructor(
   ) { }

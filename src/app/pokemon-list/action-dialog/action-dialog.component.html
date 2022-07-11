@@ -2,12 +2,16 @@
     <div class="modal bg-gray-100 rounded-lg shadow-xl p-10">
       <header [class]="selectPokemon.types[0].type.name">
         <div class="image">
-          <img *ngIf="classicMode" [src]="selectPokemon.sprites?.front_default" [alt]="selectPokemon.name">
+          <img *ngIf="classicMode && !isShiny" [src]="selectPokemon.sprites?.front_default" [alt]="selectPokemon.name">
+          <img *ngIf="isShiny && classicMode" [src]="selectPokemon.sprites.front_shiny" [alt]="selectPokemon.name">
           <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{selectPokemon.name}}.gif" [alt]="selectPokemon.name">
         </div>
         <div class="selectGif">
           <input type="checkbox" [checked]="classicMode" (change)="classicMode = !classicMode">
           {{classicMode ? 'Classic' : 'Gif'}}
+        </div>
+        <div class="selectShiny">
+          <input type="checkbox" [checked]="isShiny" (change)="isShiny = !isShiny">
         </div>
       </header>
 
