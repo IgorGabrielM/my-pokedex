@@ -12,7 +12,7 @@
         <div class="select">
           <button (click)="isShiny = !isShiny"><img src="https://cdn-icons-png.flaticon.com/512/56/56786.png" alt="simbolo de estrela"></button>
           <button (click)="classicMode = !classicMode"><img src="https://cdn-icons-png.flaticon.com/512/1837/1837532.png" alt="simbolo de estrela"></button>
-          <button *ngIf="classicMode" (click)="isBack = !isBack"><img src="https://cdn-icons-png.flaticon.com/512/15/15463.png" alt="simbolo de inverssão"></button>
+          <button (click)="isBack = !isBack" *ngIf="classicMode"><img src="https://cdn-icons-png.flaticon.com/512/15/15463.png" alt="simbolo de inverssão"></button>
         </div>
       </header>
 
@@ -31,7 +31,7 @@
           </div>
       </section>
 
-      <section class="content stats">
+      <section *ngIf="statusInfo" class="content stats">
         <div>
           <p>Weight: {{ selectPokemon.weight }}</p>
           <p>Height: {{ selectPokemon.height }} </p>
@@ -39,11 +39,18 @@
         </div>
       </section>
 
+      <section *ngIf="!statusInfo" class="content stats">
+        <div class="flex">
+          <p *ngFor="let abilitie of selectPokemon.abilities" class="bg-zinc-400 mx-1 p-1 rounded">{{ abilitie.ability.name }}</p>
+        </div>
+      </section>
+
+
+
       <footer class="footer flex align-bottom">
         <div class="flex align-bottom">
-          <button>Status</button>
-          <button>Attacks</button>
-          <button>Evolutions</button>
+          <button [class]="selectPokemon.types[0].type.name" class="button mx-1" (click)="statusInfo = true">Status</button>
+          <button [class]="selectPokemon.types[0].type.name" class="button mx-1" (click)="statusInfo = !statusInfo">Attacks</button>
         </div>
       </footer>
 

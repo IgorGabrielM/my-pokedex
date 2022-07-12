@@ -13,6 +13,7 @@ export class ActionDialogComponent implements OnInit {
   classicMode: boolean = true;
   isShiny: boolean = false;
   isBack: boolean = false;
+  statusInfo: boolean = true
 
   constructor(
   ) { }

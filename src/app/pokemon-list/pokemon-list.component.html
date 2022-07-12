@@ -27,9 +27,9 @@
           <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif" [alt]="searchPokemon.name">
         </div>
     </div>
-      <div>
-        <button (click)="loadPreviusPage(); pokemons = []">Anterior</button>
-        <button (click)="loadNextPage(); pokemons = []">Proximo</button>
+      <div class="flex justify-center">
+        <button (click)="loadPreviusPage(); pokemons = []"><img src="https://cdn-icons-png.flaticon.com/512/159/159605.png" alt="seta para a pagina anterior"></button>
+        <button (click)="loadNextPage(); pokemons = []"> <img src="https://cdn-icons-png.flaticon.com/512/159/159605.png" alt="seta para a proxima pagina" class="previusArrow"> </button>
       </div>
   </div>
   <br>
