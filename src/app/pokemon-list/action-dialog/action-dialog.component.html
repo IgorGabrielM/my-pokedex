@@ -12,7 +12,7 @@
         <div class="select">
           <button (click)="isShiny = !isShiny"><img src="https://cdn-icons-png.flaticon.com/512/56/56786.png" alt="simbolo de estrela"></button>
           <button (click)="classicMode = !classicMode"><img src="https://cdn-icons-png.flaticon.com/512/1837/1837532.png" alt="simbolo de estrela"></button>
-          <button (click)="isBack = !isBack"><img src="https://cdn-icons-png.flaticon.com/512/15/15463.png" alt="simbolo de inverssão"></button>
+          <button *ngIf="classicMode" (click)="isBack = !isBack"><img src="https://cdn-icons-png.flaticon.com/512/15/15463.png" alt="simbolo de inverssão"></button>
         </div>
       </header>
 
