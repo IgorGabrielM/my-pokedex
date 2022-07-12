@@ -18,41 +18,38 @@
 
       <section class="subtitle">
         <div class="title">
-          <h2 class="text-gray-900">{{ selectPokemon.name }}</h2>
+          <h1 class="text-gray-900">{{ selectPokemon.name }}</h1>
         </div>
           <div class="types">
-            <div *ngIf="selectPokemon.types.length === 1">
-              <h2>{{ selectPokemon.types[0].type.name}}</h2>
+            <div *ngIf="selectPokemon.types.length === 1" class="flex justify-center">
+              <div [class]="selectPokemon.types[0].type.name" class="typeHeight text-2xl">
+                <h2 class="type">{{ selectPokemon.types[0].type.name}}</h2>
+              </div>
             </div>
-            <div *ngIf="selectPokemon.types.length === 2">
-              <h2>{{ selectPokemon.types[0].type.name}}</h2>
-              <h2 >{{ selectPokemon.types[1].type.name }}</h2>
+            <div *ngIf="selectPokemon.types.length === 2" class="flex justify-center">
+              <div [class]="selectPokemon.types[0].type.name" class="typeHeight text-2xl">
+                <h2 class="type">{{ selectPokemon.types[0].type.name}}</h2>
+              </div>
+              <div [class]="selectPokemon.types[1].type.name" class="typeHeight mx-5 text-2xl">
+                <h2 class="type">{{ selectPokemon.types[1].type.name }}</h2>
+              </div>
             </div>
           </div>
       </section>
 
       <section *ngIf="statusInfo" class="content stats">
-        <div>
+        <div class="my-2">
+          <br>
           <p>Weight: {{ selectPokemon.weight }}</p>
           <p>Height: {{ selectPokemon.height }} </p>
-          <p>Base experience: {{ selectPokemon.base_experience }} </p>
+          <p>Base experience: {{ selectPokemon.base_experience }}</p>
+          <br>
+          <p>Abilities:</p>
         </div>
-      </section>
-
-      <section *ngIf="!statusInfo" class="content stats">
         <div class="flex">
-          <p *ngFor="let abilitie of selectPokemon.abilities" class="bg-zinc-400 mx-1 p-1 rounded">{{ abilitie.ability.name }}</p>
+          <p *ngFor="let ability of selectPokemon.abilities" class="bg-zinc-300 mx-1 p-1 rounded">{{ ability.ability.name }}</p>
         </div>
       </section>
-
-
-
-      <footer class="footer flex align-bottom">
-        <div class="flex align-bottom">
-          <button [class]="selectPokemon.types[0].type.name" class="button mx-1" (click)="statusInfo = true">Status</button>
-          <button [class]="selectPokemon.types[0].type.name" class="button mx-1" (click)="statusInfo = !statusInfo">Attacks</button>
-        </div>
-      </footer>
 
     </div>
   </div>
