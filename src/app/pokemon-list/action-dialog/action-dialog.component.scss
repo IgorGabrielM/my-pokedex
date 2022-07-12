@@ -115,11 +115,12 @@
 .modal{
   margin-top: 80px;
   height: 480px;
-  width: 300px;
+  width: 450px;
 }
 
 @media (max-width: 1280px){
   .modal{
+    margin-left: 120%;
     margin-top: 50px;
     height: 480px;
   }
@@ -131,3 +132,16 @@
     height: 480px;
   }
 }
+
+@media (max-width: 500px) {
+  .modal{
+    width: 350px;
+  }
+}
+
+@media (max-width: 450px) {
+  .modal{
+    width: 300px;
+  }
+}
+
