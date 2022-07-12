@@ -2,16 +2,17 @@
     <div class="modal bg-gray-100 rounded-lg shadow-xl p-10">
       <header [class]="selectPokemon.types[0].type.name">
         <div class="image">
-          <img *ngIf="classicMode && !isShiny" [src]="selectPokemon.sprites?.front_default" [alt]="selectPokemon.name">
-          <img *ngIf="isShiny && classicMode" [src]="selectPokemon.sprites.front_shiny" [alt]="selectPokemon.name">
-          <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{selectPokemon.name}}.gif" [alt]="selectPokemon.name">
+          <img *ngIf="classicMode && !isShiny && !isBack" [src]="selectPokemon.sprites?.front_default" [alt]="selectPokemon.name">
+          <img *ngIf="isBack && !isShiny && classicMode" [src]="selectPokemon.sprites.back_default" [alt]="selectPokemon.name">
+          <img *ngIf="isBack && isShiny && classicMode" [src]="selectPokemon.sprites.back_shiny" [alt]="selectPokemon.name">
+          <img *ngIf="!isBack && isShiny && classicMode" [src]="selectPokemon.sprites.front_shiny" [alt]="selectPokemon.name">
+          <img *ngIf="!classicMode && !isShiny" src="https://projectpokemon.org/images/normal-sprite/{{selectPokemon.name}}.gif" [alt]="selectPokemon.name">
+          <img *ngIf="!classicMode && isShiny" src="https://projectpokemon.org/images/shiny-sprite/{{selectPokemon.name}}.gif" [alt]="selectPokemon.name">
         </div>
-        <div class="selectGif">
-          <input type="checkbox" [checked]="classicMode" (change)="classicMode = !classicMode">
-          {{classicMode ? 'Classic' : 'Gif'}}
-        </div>
-        <div class="selectShiny">
-          <input type="checkbox" [checked]="isShiny" (change)="isShiny = !isShiny">
+        <div class="select">
+          <button (click)="isShiny = !isShiny"><img src="https://cdn-icons-png.flaticon.com/512/56/56786.png" alt="simbolo de estrela"></button>
+          <button (click)="classicMode = !classicMode"><img src="https://cdn-icons-png.flaticon.com/512/1837/1837532.png" alt="simbolo de estrela"></button>
+          <button (click)="isBack = !isBack"><img src="https://cdn-icons-png.flaticon.com/512/15/15463.png" alt="simbolo de inverssão"></button>
         </div>
       </header>
 
