@@ -22,20 +22,20 @@
 ">
     <div class="rounded-lg shadow-xl p-10 justify-center bg-gray-100"
       *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalPokemons}" (click)="getSelectPokemon(pokemon)">
-        <h1 class="text-gray-900 text-center">{{ pokemon.name }}</h1>
+        <p class="text-gray-900 text-center text-xl">{{ pokemon.name }}</p>
         <div class="flex">
           <img *ngIf="classicMode" [src]="pokemon.sprites?.front_default" [alt]="pokemon.name">
           <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif" [alt]="searchPokemon.name">
         </div>
     </div>
       <div class="flex justify-center">
-        <button (click)="loadPreviusPage(); pokemons = []"><img src="https://cdn-icons-png.flaticon.com/512/159/159605.png" alt="seta para a pagina anterior"></button>
-        <button (click)="loadNextPage(); pokemons = []"> <img src="https://cdn-icons-png.flaticon.com/512/159/159605.png" alt="seta para a proxima pagina" class="previusArrow"> </button>
+        <button (click)="loadPreviusPage(); pokemons = []" class="mx-1 my-1"><img src="https://cdn-icons-png.flaticon.com/512/159/159605.png" alt="seta para a pagina anterior"></button>
+        <button (click)="loadNextPage(); pokemons = []" class="mx-1 my-1"> <img src="https://cdn-icons-png.flaticon.com/512/159/159605.png" alt="seta para a proxima pagina" class="previusArrow"> </button>
       </div>
   </div>
   <br>
 
-  <div *ngIf="isSearching" class="pokemon__list">
+  <div *ngIf="isSearching" class="bg-gray-200">
     <div (click)="getSelectPokemon(searchPokemon)" class="rounded-lg shadow-xl p-10 justify-center bg-gray-100">
       <div>
         <div class="card__info">

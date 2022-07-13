@@ -1,11 +1,7 @@
 import { DataService } from '../@core/api/data.service';
-import {Component, OnInit, Optional} from '@angular/core';
-import {ActionDialogComponent} from "./action-dialog/action-dialog.component";
-import {NbDialogRef, NbDialogService} from "@nebular/theme";
-import {takeWhile} from "rxjs";
+import {Component, OnInit} from '@angular/core';
 import {PokemonDetailModel} from "../@core/model/pokemon.detail";
 import {FormControl} from "@angular/forms";
-import {DialogService} from "../@core/api/dialog.service";
 
 @Component({
   selector: 'app-pokemon-list',
