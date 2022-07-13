@@ -118,6 +118,14 @@
   width: 450px;
 }
 
+@media (max-width: 1350px){
+  .modal{
+    margin-top: 50px;
+    height: 480px;
+    width: 400px;
+  }
+}
+
 @media (max-width: 1280px){
   .modal{
     margin-left: 120%;
