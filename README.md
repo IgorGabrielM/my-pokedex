@@ -1,8 +1,8 @@
 <p align="center">
-  <img width="250px" heigth="250px" src="/src/assets/page.png">
+  <img width="800px" src="/src/assets/page.png">
 </p>
 
-O projeto consiste em uma pokedex com algumas funcionalidades como:
+## O projeto consiste em uma pokedex com algumas funcionalidades como:
 - Buscar um pokemon pelo nome
 - Ver os pokemons shiny
 - Ver os pokemons de costas
@@ -20,10 +20,12 @@ npm start
 ```
 
 ## :computer: Technologies
-<img align="center" alt="TypeScript" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
-<img align="center" alt="Angular" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" />
-<img align="center" alt="SCSS" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" />
-<img align="center" alt="Tailwind" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" />
+<p>
+<img alt="TypeScript" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
+<img alt="Angular" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" />
+<img alt="SCSS" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" />
+<img alt="Tailwind" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" />
+</p>
 
 ## Desenvolvimento
 
